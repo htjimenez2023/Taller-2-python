@@ -1,0 +1,16 @@
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    pivot = arr[len(arr) // 2]  # Elegimos el pivote como el elemento del medio
+    left = [x for x in arr if x < pivot]  # Todos los elementos menores que el pivote
+    middle = [x for x in arr if x == pivot]  # Todos los elementos iguales al pivote
+    right = [x for x in arr if x > pivot]  # Todos los elementos mayores que el pivote
+
+    # Llamadas recursivas a QuickSort en las sublistas izquierda y derecha
+    return quick_sort(left) + middle + quick_sort(right)
+
+# Ejemplo de uso
+my_list = [38, 27, 43, 3, 9, 82, 10]
+sorted_list = quick_sort(my_list)
+print(sorted_list)
